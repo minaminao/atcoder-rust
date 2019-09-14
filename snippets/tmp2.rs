@@ -1,10 +1,10 @@
 use std::io::*;
 use std::str::*;
+#[allow(unused_imports)]
 use std::collections::*;
 
 fn main() {
-    let N : usize = read();
-    println!(N);
+    let n : usize = read();
 }
 
 fn read<T: FromStr>() -> T {
