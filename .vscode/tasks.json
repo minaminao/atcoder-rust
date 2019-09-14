@@ -1,0 +1,17 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    // Variables: https://code.visualstudio.com/docs/editor/variables-reference
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "rustc",
+            "type": "shell",
+            "command": "cd ${relativeFileDirname}; rm -rf test; oj download https://atcoder.jp/contests/${relativeFileDirname}/tasks/${fileBasenameNoExtension}; rustc ${file} -o a.out; oj test; oj submit https://atcoder.jp/contests/${relativeFileDirname}/tasks/${fileBasenameNoExtension} ${fileBasename}",
+            "group": {
+                "kind": "build",
+                "isDefault": true,
+            }
+        },
+    ]
+}
