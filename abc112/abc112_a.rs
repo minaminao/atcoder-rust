@@ -60,7 +60,6 @@ macro_rules! read_value {
     };
 }
 
-#[allow(dead_code)]
 fn read<T: FromStr>() -> T {
     let cin = stdin();
     let cin = cin.lock();
@@ -74,4 +73,12 @@ fn read<T: FromStr>() -> T {
 }
 
 fn main() {
+    let n : usize = read();
+    if n == 1 {
+        println!("Hello World");
+    } else {
+        let a : usize = read();
+        let b : usize = read();
+        println!("{}", a + b);
+    }
 }

@@ -60,7 +60,6 @@ macro_rules! read_value {
     };
 }
 
-#[allow(dead_code)]
 fn read<T: FromStr>() -> T {
     let cin = stdin();
     let cin = cin.lock();
@@ -74,4 +73,11 @@ fn read<T: FromStr>() -> T {
 }
 
 fn main() {
+    input!(x:usize);
+    if x == 7 || x == 5 || x == 3 {
+        println!("YES");
+    }
+    else {
+        println!("NO");
+    }
 }

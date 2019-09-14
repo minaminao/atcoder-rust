@@ -74,4 +74,9 @@ fn read<T: FromStr>() -> T {
 }
 
 fn main() {
+    input!(d:usize);
+    print!("Christmas");
+    for i in 0..25-d {
+        print!(" Eve");
+    }
 }
