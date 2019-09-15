@@ -1,5 +1,7 @@
 #[allow(unused_imports)]
-use std::collections::*;
+use std::cmp::{max, min};
+#[allow(unused_imports)]
+use std::collections::{HashMap, HashSet};
 #[allow(unused_imports)]
 use std::io::*;
 #[allow(unused_imports)]
@@ -58,16 +60,36 @@ macro_rules! read_value {
     };
 }
 
+#[allow(dead_code)]
+fn read<T: FromStr>() -> T {
+    let cin = stdin();
+    let cin = cin.lock();
+    let s: String = cin
+        .bytes() // Bytes
+        .map(|c| c.expect("failed reading char") as char)
+        .skip_while(|c| c.is_whitespace()) // c が whitespace である限り skip
+        .take_while(|c| !c.is_whitespace()) // c が whitespace でない限り要素を返す
+        .collect();
+    s.parse().ok().expect("failed parsing")
+}
+
 fn main() {
-    input! {
-        s: String
-    }
-    let s = s.chars();
-    for c in s {
-        if c == '1' {
-            print!("9");
-        } else {
-            print!("1");
+    input!(s: String);
+    let mut i = 0;
+    let mut ok = true;
+    for c in s.chars() {
+        i += 1;
+        if i % 2 == 1 && (c == 'R' || c == 'U' || c == 'D') {
+            continue;
         }
+        if i % 2 == 0 && (c == 'L' || c == 'U' || c == 'D') {
+            continue;
+        }
+        ok = false;
+    }
+    if ok {
+        println!("Yes");
+    } else {
+        println!("No");
     }
 }

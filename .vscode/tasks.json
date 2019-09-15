@@ -7,7 +7,7 @@
         {
             "label": "rustc",
             "type": "shell",
-            "command": "cd ${relativeFileDirname}; rm -rf test; oj download https://atcoder.jp/contests/${relativeFileDirname}/tasks/${fileBasenameNoExtension} && rustc ${file} -o a.out && oj test && oj submit ${fileBasename} -w 0",
+            "command": "cd ${relativeFileDirname}; rm -rf test; oj download https://atcoder.jp/contests/${relativeFileDirname}/tasks/${fileBasenameNoExtension} && rustc ${file} -o a.out && oj test && oj submit https://atcoder.jp/contests/${relativeFileDirname}/tasks/${fileBasenameNoExtension} ${fileBasename} -w 0 -y",
             "group": {
                 "kind": "build",
                 "isDefault": true,

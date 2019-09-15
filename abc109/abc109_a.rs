@@ -1,7 +1,7 @@
-use std::io::*;
-use std::str::*;
 #[allow(unused_imports)]
 use std::collections::*;
+use std::io::*;
+use std::str::*;
 
 macro_rules! input {
     (source = $s:expr, $($r:tt)*) => {
@@ -57,7 +57,7 @@ macro_rules! read_value {
 }
 
 fn main() {
-    input!{
+    input! {
         a: usize,
         b: usize,
     }

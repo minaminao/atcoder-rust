@@ -1,11 +1,11 @@
 #[allow(unused_imports)]
-use std::io::*;
-#[allow(unused_imports)]
-use std::str::*;
+use std::cmp::{max, min};
 #[allow(unused_imports)]
 use std::collections::*;
 #[allow(unused_imports)]
-use std::cmp::{min,max};
+use std::io::*;
+#[allow(unused_imports)]
+use std::str::*;
 
 macro_rules! input {
     (source = $s:expr, $($r:tt)*) => {
@@ -63,7 +63,7 @@ macro_rules! read_value {
 fn read<T: FromStr>() -> T {
     let cin = stdin();
     let cin = cin.lock();
-    let s: String = cin 
+    let s: String = cin
         .bytes() // Bytes
         .map(|c| c.expect("failed reading char") as char)
         .skip_while(|c| c.is_whitespace()) // c が whitespace である限り skip
