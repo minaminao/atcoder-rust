@@ -73,4 +73,10 @@ fn read<T: FromStr>() -> T {
     s.parse().ok().expect("failed parsing")
 }
 
-fn main() {}
+fn main() {
+    input! {
+        r:isize,
+        g:isize,
+    }
+    println!("{}", r + (g - r) * 2);
+}

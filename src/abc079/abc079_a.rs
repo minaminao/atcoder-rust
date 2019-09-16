@@ -73,4 +73,15 @@ fn read<T: FromStr>() -> T {
     s.parse().ok().expect("failed parsing")
 }
 
-fn main() {}
+fn main() {
+    input! {s:String}
+    let s = s.chars().collect::<Vec<char>>();
+    println!(
+        "{}",
+        if (s[0] == s[1] && s[1] == s[2]) || (s[1] == s[2] && s[2] == s[3]) {
+            "Yes"
+        } else {
+            "NO"
+        }
+    )
+}

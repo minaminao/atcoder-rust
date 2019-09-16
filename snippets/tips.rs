@@ -22,10 +22,23 @@ fn main() {
     let s: String;
     s.chars().collect::<Vec<char>>();
 
+    // 入力
+    input! {s:String}
+    let s = s.chars().collect::<Vec<char>>();
+
     let mut ans = None;
     for c in b'a'..b'z' + 1 {
         let c = char::from(c);
         ans = Some(c.to_string());
     }
     println!("{}", ans.unwrap_or("None".to_string()));
+
+    println!(
+        "{}",
+        if a == b.chars().rev().collect::<String>() {
+            "YES"
+        } else {
+            "NO"
+        }
+    )
 }

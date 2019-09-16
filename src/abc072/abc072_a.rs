@@ -73,4 +73,7 @@ fn read<T: FromStr>() -> T {
     s.parse().ok().expect("failed parsing")
 }
 
-fn main() {}
+fn main() {
+    input! {x:isize,t:isize}
+    println!("{}", max(0, x - t));
+}

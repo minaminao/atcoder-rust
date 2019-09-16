@@ -73,4 +73,14 @@ fn read<T: FromStr>() -> T {
     s.parse().ok().expect("failed parsing")
 }
 
-fn main() {}
+fn main() {
+    input! {a:String,b:String}
+    println!(
+        "{}",
+        if a == b.chars().rev().collect::<String>() {
+            "YES"
+        } else {
+            "NO"
+        }
+    )
+}

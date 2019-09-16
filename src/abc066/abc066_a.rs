@@ -73,4 +73,9 @@ fn read<T: FromStr>() -> T {
     s.parse().ok().expect("failed parsing")
 }
 
-fn main() {}
+fn main() {
+    input! {v: [usize; 3]};
+    let mut v = v;
+    v.sort();
+    println!("{}", v[1] + v[0]);
+}

@@ -73,4 +73,11 @@ fn read<T: FromStr>() -> T {
     s.parse().ok().expect("failed parsing")
 }
 
-fn main() {}
+fn main() {
+    input! {x:isize, a:isize, b:isize}
+    if (x - a).abs() < (x - b).abs() {
+        println!("A");
+    } else {
+        println!("B");
+    }
+}
