@@ -21,6 +21,9 @@ fn main() {
     // String
     let s: String;
     s.chars().collect::<Vec<char>>();
+    s.chars().filter(|c| *c == '1').count();
+    s.chars().filter(|&c| c == 'o').count();
+    s.replace("2017", "2018");
 
     // 入力
     input! {s:String}
