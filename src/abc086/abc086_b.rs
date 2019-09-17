@@ -74,7 +74,8 @@ fn read<T: FromStr>() -> T {
 }
 
 fn main() {
-    input! {a:String, b:String}
+    let a: usize = read();
+    let b: usize = read();
     let s = format!("{}{}", a, b);
     let x = s.parse::<isize>().unwrap();
     let mut is_square = false;
@@ -84,13 +85,9 @@ fn main() {
             break;
         }
     }
-    println! {
-        "{}",
-        if is_square {
-            "Yes"
-        }
-        else {
-            "No"
-        }
+    if is_square {
+        println!("Yes");
+    } else {
+        println!("No");
     }
 }

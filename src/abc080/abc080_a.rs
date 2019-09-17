@@ -74,6 +74,8 @@ fn read<T: FromStr>() -> T {
 }
 
 fn main() {
-    input! {n:usize,a:usize,b:usize}
-    println! {"{}", min(a*n,b)}
+    let n: usize = read();
+    let a: usize = read();
+    let b: usize = read();
+    println!("{}", min(a * n, b));
 }

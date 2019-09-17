@@ -20,4 +20,19 @@ fn read<T: FromStr>() -> T {
     s.parse().ok().expect("failed parsing")
 }
 
-fn main() {}
+fn main() {
+    let n: usize = read();
+    let mut a = Vec::new();
+    for i in 0..n {
+        a.push(read::<usize>());
+    }
+    let mut b = a.clone();
+    b.sort();
+    for i in 0..n {
+        if b[n - 1] == a[i] {
+            println!("{}", b[n - 2]);
+        } else {
+            println!("{}", b[n - 1]);
+        }
+    }
+}

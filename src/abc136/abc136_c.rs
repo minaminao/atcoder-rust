@@ -20,4 +20,19 @@ fn read<T: FromStr>() -> T {
     s.parse().ok().expect("failed parsing")
 }
 
-fn main() {}
+fn main() {
+    let n: usize = read();
+    let mut h = Vec::<usize>::new();
+    for i in 0..n {
+        h.push(read());
+    }
+    for i in 1..n {
+        if h[i - 1] < h[i] {
+            h[i] -= 1;
+        } else if h[i - 1] > h[i] {
+            println!("No");
+            return;
+        }
+    }
+    println!("Yes");
+}

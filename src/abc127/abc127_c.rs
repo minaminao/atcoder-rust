@@ -20,4 +20,16 @@ fn read<T: FromStr>() -> T {
     s.parse().ok().expect("failed parsing")
 }
 
-fn main() {}
+fn main() {
+    let n: usize = read();
+    let m: usize = read();
+    let mut l = Vec::new();
+    let mut r = Vec::new();
+    for _i in 0..m {
+        l.push(read::<isize>() - 1);
+        r.push(read::<isize>() - 1);
+    }
+    let a = l.iter().max().unwrap();
+    let b = r.iter().min().unwrap();
+    println!("{}", max(0, b - a + 1));
+}

@@ -24,6 +24,7 @@ fn main() {
     s.chars().filter(|c| *c == '1').count();
     s.chars().filter(|&c| c == 'o').count();
     s.replace("2017", "2018");
+    v.iter().collect::<String>()
 
     // 入力
     input! {s:String}
@@ -36,6 +37,7 @@ fn main() {
     }
     println!("{}", ans.unwrap_or("None".to_string()));
 
+    let ans: String = t.into_iter().collect();
     println!(
         "{}",
         if a == b.chars().rev().collect::<String>() {
