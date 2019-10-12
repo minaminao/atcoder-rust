@@ -1,4 +1,5 @@
 set -eu
+
 URL=$1
 CONTEST=`echo $URL | sed -E 's/.+\/([^\_]+)\/tasks\/([^\/]+)$/\1/'`
 PROBLEM=`echo $URL | sed -E 's/.+\/([^\_]+)\/tasks\/([^\/]+)$/\2/'`

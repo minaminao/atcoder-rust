@@ -18,6 +18,10 @@ fn main() {
 
     let n = format!("{:b}", n);
 
+    // Vec
+    let mut vec = Vec::new();
+    vec = Vec::with_capacity(100);
+
     // String
     let s: String;
     s.chars().collect::<Vec<char>>();
@@ -46,4 +50,21 @@ fn main() {
             "NO"
         }
     )
+
+    input! {
+        n: usize,
+        v: [(usize, usize); n],
+    }
+
+    for (a, b) in v {
+        
+    }
+
+    // 出力 定数倍高速化
+    let mut ans = String::new();
+    for i in 0..n {
+        ans.push_str(s);
+        ans.push('\n');
+    }
+    print!("{}", ans);
 }
