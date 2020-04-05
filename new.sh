@@ -1,8 +1,8 @@
 set -eu
 
 URL=$1
-CONTEST=`echo $URL | sed -E 's/.+\/([^\_]+)\/tasks\/([^\/]+)$/\1/'`
-PROBLEM=`echo $URL | sed -E 's/.+\/([^\_]+)\/tasks\/([^\/]+)$/\2/'`
+CONTEST=`echo $URL | sed -E 's/.+\/([^\/]+)\/tasks\/([^\/]+)$/\1/'`
+PROBLEM=`echo $URL | sed -E 's/.+\/([^\/]+)\/tasks\/([^\/]+)$/\2/'`
 
 mkdir -p src/$CONTEST
 
