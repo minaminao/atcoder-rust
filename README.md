@@ -1,0 +1,1 @@
+### [minaminao/rust-compro](https://github.com/minaminao/rust-compro) に移行
